@@ -27,6 +27,9 @@ public:
     postaviY(y);
     // this->x = x; u ovom slučaju nije best practice budući da se ne koristi setter metoda. Isto vrijedi i za this->y = y;
   }
+  void info() {
+    std::cout << "(" << x << ", " << y << ")" << std::endl;
+  }
   double x;
   double y;
 };
@@ -40,6 +43,6 @@ int main() {
 
   tocka1.postavi(7.0, 8.0);
 
-  std::cout << "Tocka 1: (" << tocka1.x << ", " << tocka1.y << ")" << std::endl;
-  std::cout << "Tocka 2: (" << tocka2.x << ", " << tocka2.y << ")" << std::endl;
+  tocka1.info();
+  tocka2.info();
 }
