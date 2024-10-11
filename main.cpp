@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 
 class Tocka2D {
 public:
@@ -30,6 +31,9 @@ public:
   void info() {
     std::cout << "(" << x << ", " << y << ")" << std::endl;
   }
+  double udaljenost(const Tocka2D& druga) {
+    return std::sqrt((x - druga.x) * (x - druga.x) + (y - druga.y) * (y - druga.y));
+  }
   double x;
   double y;
 };
@@ -45,4 +49,10 @@ int main() {
 
   tocka1.info();
   tocka2.info();
+
+  double udaljenost = tocka1.udaljenost(tocka2);
+  std::cout << "Udaljenost: " << udaljenost << std::endl;
+
+  // ili ovako
+  std::cout << "Udaljenost: " << tocka1.udaljenost(tocka2) << std::endl;
 }
